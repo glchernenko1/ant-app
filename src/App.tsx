@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, } from 'react';
 import { Layout, Select, Button, message, Card, Space, Typography } from 'antd';
 import { api, Fiat, ExchangeSoup } from './services/api';
 import ExchangeSoupForm from './components/ExchangeSoupForm';

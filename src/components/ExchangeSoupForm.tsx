@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Form, Input, InputNumber, Button, Card, Space, message, Collapse, Typography, Select } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Form, Input, InputNumber, Button, Space, message, Collapse, Select, Card } from 'antd';
 import { PlusOutlined, MinusCircleOutlined, EditOutlined, SaveOutlined, DeleteOutlined } from '@ant-design/icons';
 import { api, ExchangeSoup, ExchangeParser } from '../services/api';
 import ExchangeParserForm from './ExchangeParserForm';
@@ -46,7 +46,6 @@ const ExchangeSoupForm: React.FC<ExchangeSoupFormProps> = ({
   const [form] = Form.useForm();
   const [exchangeOptions, setExchangeOptions] = useState<string[]>([]);
   const [isEditing, setIsEditing] = useState(mode === 'edit' || isNew);
-  const prevExchangeName = useRef<string | undefined>();
 
   useEffect(() => {
     if (initialValues) {
@@ -56,7 +55,7 @@ const ExchangeSoupForm: React.FC<ExchangeSoupFormProps> = ({
 
   useEffect(() => {
     // Получаем список бирж для выпадающего списка
-    api.getExchanges(fiat).then(setExchangeOptions);
+    api.getExchanges().then(setExchangeOptions);
   }, [fiat]);
 
   const handleValuesChange = (_: any, allValues: ExchangeSoup) => {

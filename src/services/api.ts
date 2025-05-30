@@ -49,12 +49,12 @@ export const api = {
   },
 
   // Get available exchanges for a fiat
-  getExchanges: async (fiat: string): Promise<string[]> => {
+  getExchanges: async (): Promise<string[]> => {
     return Promise.resolve(mockExchanges);
   },
 
   // Get available banks for a fiat and exchange
-  getBanks: async (fiat: string, exchange: string): Promise<string[]> => {
+  getBanks: async (_: string, exchange: string): Promise<string[]> => {
     return Promise.resolve(mockExchangeBanks[exchange] || []);
   },
 

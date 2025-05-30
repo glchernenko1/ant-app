@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, Select, Card, Space, Typography, Divider, Button, Checkbox } from 'antd';
+import { Form, Select, Space, Typography, Divider, Button, Checkbox } from 'antd';
 import { EditOutlined, SaveOutlined } from '@ant-design/icons';
 import { api, ExchangeParser } from '../services/api';
 import FilterForm from './FilterForm';
@@ -30,7 +30,7 @@ const ExchangeParserForm: React.FC<ExchangeParserFormProps> = ({
 
   // Load available exchanges
   useEffect(() => {
-    api.getExchanges(fiat).then(setExchanges);
+    api.getExchanges().then(setExchanges);
   }, [fiat]);
 
   // Load banks for current exchange
