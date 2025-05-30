@@ -129,7 +129,7 @@ const ExchangeParserForm: React.FC<ExchangeParserFormProps> = ({
       initialValues={initialValues}
       onValuesChange={handleValuesChange}
     >
-      <Form.Item
+      {/* <Form.Item
         label="Exchange"
         name="exchange_name"
         rules={[{ required: true, message: 'Please select an exchange!' }]}
@@ -139,7 +139,7 @@ const ExchangeParserForm: React.FC<ExchangeParserFormProps> = ({
           options={exchanges.map(exchange => ({ label: exchange, value: exchange }))}
           onChange={handleExchangeChange}
         />
-      </Form.Item>
+      </Form.Item> */}
 
       <Form.Item
         label="Banks"
