@@ -22,7 +22,7 @@ const ExchangeParserForm: React.FC<ExchangeParserFormProps> = ({
   exchangeName
 }) => {
   const [form] = Form.useForm();
-  const [exchanges, setExchanges] = useState<string[]>([]);
+  const [_, setExchanges] = useState<string[]>([]);
   const [banks, setBanks] = useState<string[]>([]);
   const [currentExchange, setCurrentExchange] = useState<string>(exchangeName || '');
   const [isEditing, setIsEditing] = useState(mode === 'edit');
@@ -55,13 +55,7 @@ const ExchangeParserForm: React.FC<ExchangeParserFormProps> = ({
     onChange?.(allValues);
   };
 
-  const handleExchangeChange = (value: string) => {
-    setCurrentExchange(value);
-    form.setFieldsValue({ 
-      exchange_name: value,
-      banks: []
-    });
-  };
+
 
   const toggleEdit = () => {
     setIsEditing(!isEditing);
