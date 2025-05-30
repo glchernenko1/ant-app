@@ -1,14 +1,11 @@
 // Mock data
-const mockFiats = ['USD', 'EUR', 'GBP', 'JPY', 'CNY'];
-const mockExchanges = ['Binance', 'Kraken', 'Coinbase', 'Huobi', 'OKX'];
+const mockFiats = ['USD', 'EUR', 'RUB', ];
+const mockExchanges = ['Binance', 'Bybit'];
 
 // Mock banks for each exchange
 const mockExchangeBanks: Record<string, string[]> = {
   'Binance': ['Tinkoff', 'Sberbank', 'Raiffeisen', 'Alfa Bank'],
-  'Kraken': ['Tinkoff', 'Sberbank', 'Raiffeisen'],
-  'Coinbase': ['Tinkoff', 'Sberbank', 'Alfa Bank'],
-  'Huobi': ['Tinkoff', 'Raiffeisen', 'Alfa Bank'],
-  'OKX': ['Sberbank', 'Raiffeisen', 'Alfa Bank']
+  "Bybit": ["Tinkoff", "Sberbank", "Raiffeisen", "Alfa Bank"],
 };
 
 // Types

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, InputNumber, Select, Space, Typography } from 'antd';
+import { Form, InputNumber, Space, Typography } from 'antd';
 import { Filter } from '../services/api';
 
 const { Text } = Typography;
@@ -80,21 +80,7 @@ const FilterForm: React.FC<FilterFormProps> = ({
         <InputNumber style={{ width: '100%' }} min={0} />
       </Form.Item>
 
-      <Form.Item
-        label="Payment Methods"
-        name="payment_methods"
-        rules={[{ required: true, message: 'Please select payment methods!' }]}
-      >
-        <Select
-          mode="multiple"
-          options={[
-            { label: 'Bank Transfer', value: 'bank_transfer' },
-            { label: 'Cash', value: 'cash' },
-            { label: 'PayPal', value: 'paypal' }
-          ]}
-          placeholder="Select payment methods"
-        />
-      </Form.Item>
+    
     </Form>
   );
 
